@@ -13,7 +13,10 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("http://localhost:5173") // your frontend URL
+                        .allowedOrigins(
+                                "http://localhost:5173",
+                                "https://daily-verse-app.vercel.app"  // add your live frontend
+                        )
                         .allowedMethods("GET","POST","PUT","DELETE","OPTIONS")
                         .allowedHeaders("*")
                         .allowCredentials(true);
