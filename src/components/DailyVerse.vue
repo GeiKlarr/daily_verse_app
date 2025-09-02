@@ -89,12 +89,11 @@ async function getVerse() {
 
 async function sendVerseToLocalApi(reference) {
   try {
-    const res = await fetch("http://localhost:8080/api/verse/get", {
+    const res = await fetch("https://daily-verse-app-amqy.onrender.com/api/verse/get", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ scripture: reference }), // 👈 pass only the reference
+      body: JSON.stringify({ scripture: reference }),
     });
-
     if (!res.ok) throw new Error("Failed to send verse to local API");
 
     const data = await res.json();
