@@ -14,10 +14,10 @@
 
     <div v-else>
       <blockquote class="italic text-xl text-gray-800 leading-relaxed mb-4">
-        “{{ verse.text }}”
+        “{{ verse.value.text }}”
       </blockquote>
       <p class="text-indigo-600 font-semibold text-lg">
-        — {{ verse.reference }}
+        — {{ verse.value.reference }}
       </p>
     </div>
 
