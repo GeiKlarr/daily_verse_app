@@ -12,14 +12,14 @@
       ⚠️ {{ error }}
     </div>
 
-    <div v-else>
-      <blockquote class="italic text-xl text-gray-800 leading-relaxed mb-4">
-        “{{ verseInstant.value.text || verse.text }}”
-      </blockquote>
-      <p class="text-indigo-600 font-semibold text-lg">
-        — {{ verse.value.reference || verse.value.reference }}
-      </p> 
-    </div>
+<div v-else>
+  <blockquote class="italic text-xl text-gray-800 leading-relaxed mb-4">
+    “{{ verseInstant.text || verse.text }}”
+  </blockquote>
+  <p class="text-indigo-600 font-semibold text-lg">
+    — {{ verseInstant.reference || verse.reference }}
+  </p>
+</div>
 
     <!-- Collapse button (only show if sermon is available) -->
     <button v-if="verse.sermon_url" @click="showExtra = !showExtra" class="mt-8 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-full shadow-md hover:bg-indigo-700 hover:shadow-lg transition-all duration-300 ease-in-out">
