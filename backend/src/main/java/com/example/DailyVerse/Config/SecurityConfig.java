@@ -29,7 +29,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         configuration.setAllowedOrigins(
-                List.of("http://localhost:5173", "https://daily-verse-app.vercel.app")
+                List.of("http://localhost:5173", "https://daily-verse-app.vercel.app", "https://daily-verse-20d56ay3b-geiklarrs-projects.vercel.app" )
         );
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
