@@ -14,11 +14,11 @@
 
     <div v-else>
       <blockquote class="italic text-xl text-gray-800 leading-relaxed mb-4">
-        “{{ verse.value.text }}”
+        “{{ verseInstant.value.text || verse.text }}”
       </blockquote>
       <p class="text-indigo-600 font-semibold text-lg">
-        — {{ verse.value.reference }}
-      </p>
+        — {{ verse.value.reference || verse.value.reference }}
+      </p> 
     </div>
 
     <!-- Collapse button (only show if sermon is available) -->
@@ -58,6 +58,7 @@
 import { ref, onMounted } from "vue";
 
 const verse = ref({});
+const verseInstant = ref({});
 const loading = ref(true);
 const error = ref(null);
 const showExtra = ref(false);
@@ -78,6 +79,11 @@ async function getVerse() {
       text: json.verse.details.text,
       reference: json.verse.details.reference,
     };
+
+    verseInstant.value = { 
+      text: json.verse.details.text,
+      reference: json.verse.details.reference,
+     };
 
     await sendVerseToLocalApi(verse.value.reference);
   } catch (err) {
