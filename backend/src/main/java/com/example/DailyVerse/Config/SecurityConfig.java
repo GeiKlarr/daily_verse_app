@@ -31,6 +31,10 @@ public class SecurityConfig {
         configuration.setAllowedOrigins(
                 List.of("http://localhost:5173", "https://daily-verse-app.vercel.app", "https://daily-verse-20d56ay3b-geiklarrs-projects.vercel.app" )
         );
+        configuration.setAllowedOriginPatterns(List.of(
+                "https://daily*.vercel.app",
+                "https://daily*.onrender.com"
+        ));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);
