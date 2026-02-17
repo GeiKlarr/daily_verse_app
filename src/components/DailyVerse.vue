@@ -75,6 +75,7 @@ async function getVerse() {
       headers: { accept: "application/json" },
     });
     const json = await res.json();
+    loading.value = false;
     verse.value = {
       text: json.verse.details.text,
       reference: json.verse.details.reference,
